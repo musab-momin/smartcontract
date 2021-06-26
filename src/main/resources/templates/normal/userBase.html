@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="Layout(content)">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}"></title>
+    <link rel="stylesheet" th:href="@{/styles/userBase.css}">
+    <link rel="stylesheet" th:href="@{/styles/dashboard.css}">
+    <link rel="stylesheet" th:href="@{/styles/addContact.css}">
+    <link rel="stylesheet" th:href="@{/styles/showcontact.css}">
+    <link rel="stylesheet" th:href="@{/styles/profile.css}">
+    <link rel="stylesheet" th:href="@{/styles/updateUser.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <h2>SmartContact</h2>
+            <div class="burger" id="burgerId">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+       <div class="right">
+           <nav>
+               <li class="burgerDisplay" id="nav"><a th:href="@{/index}">Home</a></li>
+               <li class="burgerDisplay" id="nav"><a href="#">About</a></li>
+               <li class="burgerDisplay" id="nav"><div class="user" th:text="${user.name}"></div></li>
+               <li class="burgerDisplay" id="nav"><a th:href="@{/logout}">Logout</a></li>
+           </nav>
+       </div>
+    </div>
+
+    <!-- dashbord section -->
+        <div class="parentContainer">
+            <div class="sidebar" id="sideBar">
+                <a th:href="@{/user/home}"><i class="fas fa-home"></i>Home</a>
+                <a th:href="@{/user/showcontacts/0}"><i class="fas fa-id-card-alt"></i>View Contact</a>
+                <a th:href="@{/user/addcontact}"><i class="fas fa-pencil-alt"></i>Add Contact</a>
+                <a th:href="@{/user/profile}"><i class="fas fa-user-circle"></i>Your Profile</a>
+                <a href=""><i class="fas fa-cogs"></i>Settings</a>
+                <a th:href="@{/logout}"><i class="fas fa-sign-out-alt"></i>Logout</a>
+            </div>
+            <div class="dashBurger" id="dashBurger">
+                <li class="fas fa-bars"></li>
+            </div>
+            <!-- this is section change it self depend on which page is opened -->
+            <div th:replace = "${content}"></div>
+        </div>
+    <script th:src="@{/scripts/base.js}"></script>
+    <script>
+        const bar = document.getElementById("dashBurger");
+        const dash = document.getElementById('sideBar').style;
+        const main = document.getElementById('main').style;
+        bar.onclick = ()=>
+        {
+            if(dash.display=='flex')
+            {
+                dash.display = 'none';
+                main.width = '95vw';
+            }
+            else
+            {
+                dash.display = 'flex';
+                main.width = '80vw';
+            } 
+            
+        }
+        // const updateButton = document.getElementById('updateButton');
+        // updateButton.onclick = ()=>
+        // {
+        //     window.location.href = "localhost:8080/user/home";
+            
+        // }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/userBase::Layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <section>
+        <div class="main" id="main">
+            <div class="contactForm">
+                <form enctype="multipart/form-data" th:action="@{/user/processContact}" 
+                method="POST" th:object="${contact}">
+                    <h2>Add Contact</h2>
+                    <div th:if="${session.message}">
+                        <span th:text="${session.message.subject}" th:classappend="${session.message.type}"></span>
+                        <th:block th:text="${#session.removeAttribute('message')}"></th:block>
+                    </div>
+                    <div th:if="${fieldErrors!=null}" th:classappend="${'contactError'}">
+                        <span style="color: #fff;">Please fill every field correctly..</span>
+                    </div>
+                    <input type="text" name="c_name" id="contactName" 
+                    placeholder="Enter Contact Name"><br>
+                    <input type="email" name="c_email" id="contactEmail"
+                    placeholder="Enter Contact Email"><br>
+                    <input type="text" name="mobile" id="contactNumber"
+                    placeholder="Enter Contact Number"><br>
+                    <textarea name="about" id="aboutContact" cols="68" rows="10"
+                    placeholder="Enter Description of Contact"></textarea><br>
+                    <input type="file" name="profileImage" id="contactImage"><br>
+                    <button type="submit">AddContact</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>

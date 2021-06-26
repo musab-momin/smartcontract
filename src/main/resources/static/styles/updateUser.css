@@ -1,0 +1,44 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section
+{
+    position: relative;
+}
+.updateContainer
+{
+    width: 50vw;
+    height: 60vh;
+    border: 2px solid rgb(69, 191, 248);
+    position: absolute;
+    top: 50%;
+    transform: translate(30%, -50%);
+    text-align: center;
+}
+
+.updateContainer > form > input
+{
+    width: 45vw;
+    height: 6vh;
+    margin-top: 2em;
+    padding: .5em .5em;
+}
+.updateContainer > form > button
+{
+    width: 15vw;
+    height: 6vh;
+    margin-top: 4em;
+    background: #121212;
+    border:2px solid rgb(69, 191, 248);
+    color: #fff;
+    cursor: pointer;
+}
+.updateContainer > form > button:hover
+{
+    background: rgb(69, 191, 248);
+    color: #fff;
+}

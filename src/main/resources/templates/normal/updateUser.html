@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="/normal/userBase::Layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section id="main">
+        <div class="updateContainer">
+            <h2>Update Profile</h2>
+            <form th:action="@{/user/processUpdate}" th:object="${user}" 
+            method="POST" enctype="multipart/form-data">
+                <span th:if="${errorMessage!=null}">
+                    <p th:text=${errorMessage.subject}></p>
+                </span>
+                <input type="text" name="name" placeholder="Enter your name.." th:value="${user.name}"><br>
+                <input type="email" name="email" placeholder="Enter your Email" th:value="${user.email}"><br>
+                <input type="password" name="password" placeholder="Enter your password"><br>
+                <input type="file" name="image">
+                <button type="submit">Update</button>
+                <button type="button" th:onclick="@{location.href='/user/profile'}">Back</button>
+            </form>
+        </div>
+       
+    </section>
+</body>
+</html>

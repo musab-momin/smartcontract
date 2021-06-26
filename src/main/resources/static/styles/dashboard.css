@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.parentContainer {
+  display: flex;
+}
+.sidebar {
+  background: #121212;
+  display: flex;
+  flex-direction: column;
+  width: 15vw;
+  height: 93.2vh;
+  gap: 1em;
+
+}
+.sidebar > a {
+  text-decoration: none;
+  color: #ffff;
+  margin: 0.8em;
+  padding: 0.2em 0.2em;
+}
+.sidebar > a:hover {
+  background: #fff;
+  color: black;
+  width: 92%;
+  height: 4vh;
+}
+.sidebar > a:focus {
+  background: #fff;
+  color: black;
+  width: 92%;
+  height: 4vh;
+}
+.dashBurger {
+  height: 93.2vh;
+  width: 5vw;
+  background: #121212;
+  cursor: pointer;
+  border-right: 5px solid rgb(76, 194, 248);
+}
+.dashBurger > li
+{
+  margin-left: 1em;
+  color: #fff;
+}
+.parentContent {
+  width: 80vw;
+  height: 93.2vh;
+  background-color: #121212;
+  color: #fff;
+}
+.parentContent > div
+{
+  text-align: center;
+}
+
+@media screen and (max-width: 511px)
+{
+    .sidebar
+    {
+        display: none;
+        width: 25vw;
+    }
+    .parentContent
+    {
+        margin-left: 0;
+    }
+    .parentContent {
+      width: 90vw;
+      background-color: #121212;
+      color: #fff;
+    }
+
+    .dashBurger {
+      width: 30vw;
+      background: #011c39;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    
+    
+}

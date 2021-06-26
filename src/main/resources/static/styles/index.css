@@ -1,0 +1,54 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Nunito, "Arial Narrow", Arial, sans-serif;
+  background: #121212;
+}
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: white; */
+}
+.body > .bodyContent {
+  width: 90vw;
+  margin: 6em;
+}
+.body > .bodyContent > h2 {
+  width: 20vw;
+  min-width: 300px;
+  font-size: 2.8rem;
+  color: #fff;
+}
+.body > .bodyContent > button {
+  padding: 0.1rem;
+  width: 8em;
+  font-size: 1.1em;
+  background: rgb(0, 0, 0.7);
+  color: #fff;
+  cursor: pointer;
+  border: 2px solid rgb(84, 160, 247);
+  border-radius: 5px;
+  animation-name: buttonEffect 3s infinite alternate ease-in;
+  /* -webkit-animation: buttonEffect 3s infinite alternate ease-in; */
+}
+@keyframes buttonEffect {
+  0% {
+    border: 2px solid rgb(84, 160, 247);
+  }
+  100% {
+    border: 2px solid black;
+    background: rgb(84, 160, 247);
+  }
+}
+@-webkit-keyframes buttonEffect {
+  from {
+    border: 1px solid rgb(84, 160, 247);
+  }
+  to {
+    background: rgb(84, 160, 247);
+  }
+}

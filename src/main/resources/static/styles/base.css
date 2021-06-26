@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Nunito, "Arial Narrow", Arial, sans-serif;
+    background: #121212;
+  }
+  .container {
+    display: flex;
+    width: 100vw;
+  }
+  .container > .left {
+    display: flex;
+    background: #011c39;
+    color: white;
+    width: 100vw;
+    justify-content: space-between;
+  }
+  .container > .left > h2 {
+    font-size: 2rem;
+    padding: 0.2em;
+  }
+  .container > .right {
+    background: #011c39;
+    color: white;
+    width: 100vw;
+  }
+  .container > .right > nav {
+    display: flex;
+    justify-content: end;
+  }
+  .container > .right > nav > li {
+    list-style-type: none;
+    padding: 1em;
+  }
+  .container > .right > nav > li > a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+  }
+  .container > .right > nav > li > a:hover {
+    font-weight: bolder;
+    color: cadetblue;
+    text-decoration: underline;
+  }
+  .container > .right > nav > li > a:active {
+    font-weight: bolder;
+    color: cadetblue;
+    text-decoration: underline;
+  }
+  
+  /* footer */
+  .end {
+    background: #011c39;
+  }
+  footer {
+    background: #011c39;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+  }
+  .copyRight {
+    height: 6vh;
+    color: #fff;
+    padding: 0.6em;
+    bottom: 0;
+  }
+  /* burger */
+  .burger {
+    margin: 0.8em;
+    cursor: pointer;
+    display: none;
+  }
+  .line {
+    width: 1.4rem;
+    height: 0.2rem;
+    background-color: #fff;
+    margin: 0.2em 0.2em;
+  }
+  
+  /* classes for toggle on nav */
+  .show {
+    display: block;
+  }
+  .hide {
+    display: none;
+  }
+  
+  @media screen and (max-width: 511px) {
+    .container {
+      display: block;
+    }
+    .container > .right > nav {
+      display: flex;
+      flex-direction: column;
+    }
+    /* burgerpart */
+    .burger {
+      display: block;
+      justify-content: right;
+    }
+  }
+  
+  @media (hover: hover) {
+    .container > .right > nav > li > a:hover {
+      font-weight: bolder;
+      color: cadetblue;
+      text-decoration: underline;
+    }
+  }
+  @media (active: active) {
+    .container > .right > nav > li > a:hover {
+      font-weight: bolder;
+      color: cadetblue;
+      text-decoration: underline;
+    }
+  }
+  

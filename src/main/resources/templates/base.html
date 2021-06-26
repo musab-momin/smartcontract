@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="Layout(content)">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" th:href="@{/styles/base.css}">
+    <link rel="stylesheet" th:href="@{/styles/index.css}">
+    <link rel="stylesheet" th:href="@{/styles/signup.css}">
+    <link rel="stylesheet" th:href="@{/styles/signin.css}">
+    <title th:text="${title}">base</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <h2>SmartContact</h2>
+            <div class="burger" id="burgerId">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+       <div class="right">
+           <nav>
+               <li class="burgerDisplay" id="nav"><a th:href="@{/index}">Home</a></li>
+               <li class="burgerDisplay" id="nav"><a href="#">About</a></li>
+               <li class="burgerDisplay" id="nav"><a th:href="@{/signin}">SignIn!</a></li>
+               <li class="burgerDisplay" id="nav"><a th:href="@{/signup}">SignUp!</a></li>
+           </nav>
+       </div>
+    </div>
+    <!-- this is section change it self depend on which page is opened -->
+    <div th:replace = "${content}"></div>
+
+
+    <!-- footer part -->
+    <!-- <div class="end">
+        <footer>
+           <div class="copyRight">
+            &#169; Copy Right All right reserved.
+           </div>
+        </footer>
+    </div> -->
+    <script th:src="@{/scripts/base.js}"></script>
+    <script>
+        const signupButton = document.getElementById('signup');
+        signupButton.onclick = ()=>
+        {
+            window.location.assign("signup");
+        }
+
+        const signButton = document.getElementById("signin");
+        signButton.onclick = ()=>
+        {
+            window.location.assign("signin");
+        }
+    </script>
+</body>
+</html>

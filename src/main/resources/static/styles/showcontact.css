@@ -1,0 +1,96 @@
+/* .showContainer
+{
+    display: flex;
+} */
+.nameandimg
+{
+    width: 80vw;
+    height: 22vh;
+    background-color: #121212;
+    color: #fff;
+    /* text-align: center; */
+    border-top: 2px solid rgb(76, 194, 248);
+    border-bottom: 2px solid rgb(76, 194, 248);
+    display: flex;
+    gap: 5em;
+}
+.nameandimg > img
+{
+    border-radius: 50%;
+    border: 1px solid cornflowerblue;
+    margin: 0.5em;
+    margin-left: 5em;
+    object-fit: cover;
+}
+
+.nameandimg > button
+{
+    width: 10vw;
+    height: 6vh;
+    margin-top: 3em;
+    background: #121212;
+    border:2px solid rgb(76, 194, 248);
+    color: #fff;
+    cursor: pointer;
+}
+.nameandimg > a
+{
+    width: 10vw;
+    height: 6vh;
+    margin-top: 2.5em;
+    background: #121212;
+    border:2px solid rgb(76, 194, 248);
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    padding-top: .5em;
+}
+.nameandimg > button:hover
+{
+    background: rgb(76, 194, 248);
+    color: #121212;
+}
+.nameandimg > a:hover
+{
+    background: rgb(76, 194, 248);
+    color: #121212;
+}
+
+
+.details
+{
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+/* pagination */
+.pagination
+{
+    text-align: center;
+    display: flex;
+    gap: 2em;
+    margin-top: 1em;
+    justify-content: center;
+    align-items: center;
+}
+.pagination > li
+{
+    list-style-type: none;
+}
+.pageNavigation > .pagination > li > a
+{
+    color: #fff;
+    text-decoration: none;
+    font-size: large;
+    border: 1px solid rgb(31, 144, 250);
+    padding: 0.5em;
+}
+/* active page class */
+.activePage
+{
+    background:rgb(31, 144, 250);
+    color: #fff;
+}

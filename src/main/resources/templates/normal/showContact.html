@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://wwww.thymeleaf.org" th:replace="normal/userBase::Layout(~{::section})">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <section id="main">
+        <h2 style="text-align: center; margin-top: 2em;">All Contacts</h2><br>
+        <div class="showContainer">
+            <div  th:each="c: ${contacts}" class="nameandimg">
+                <img src="" th:src="@{'/profile_images/'+${c.image}}" alt="" id="profilePic" width="130" height="130">
+                <div class="details">
+                    <span th:text="${'Name: '+c.c_name}"></span>
+                    <span th:text="${'Email: '+c.c_email}" id="contactEmail"></span>
+                    <span th:text="${'ContactNO: '+c.mobile}" id="contactNumber">98756320</span>
+                    <span th:text="${'About: '+c.about}" id="contactAbout">Engineer and Mathematician</span>
+                </div>
+                <button id="updateButton" th:onclick="@{location.href='/user/home'}">Update</button>
+                <a th:href="@{'/user/delete/'+${c.cid}}">Delete</a>
+            </div><br>
+        </div>
+        <div class="pageNavigation">
+            <ul class="pagination">
+                <li th:if="${currentPage}"><a th:href="@{'/user/showcontacts/'+${currentPage-1}}">Previous</a></li>
+                <li th:each="i: ${#numbers.sequence(1, totalPage)}">
+                    <a th:href="@{'/user/showcontacts/'+${i-1}}" th:text="${i}"
+                    th:classappend="${currentPage==i-1?'activePage':''}"></a>
+                </li>
+                <li th:if="${totalPage!=currentPage+1}"><a th:href="@{'/user/showcontacts/'+${currentPage+1}}">Next</a></li>
+            </ul>
+        </div>
+    </section>
+</body>
+
+</html>
